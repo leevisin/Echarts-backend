@@ -1,5 +1,5 @@
 cover,title,type,data
-https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/bar-simple.webp?_v_=1635740497748,Bar,bar,"option = {\n' +
+https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/bar-simple.webp?_v_=1635740497748,Basic Bar,bar,"option = {\n' +
             '  xAxis: {\n' +
             '    type: \'category\',\n' +
             '    data: [\'Mon\', \'Tue\', \'Wed\', \'Thu\', \'Fri\', \'Sat\', \'Sun\']\n' +
@@ -14,7 +14,7 @@ https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/
             '    }\n' +
             '  ]\n' +
             '};"
-"",,,"option = {
+,,,"option = {
   xAxis: {},
   yAxis: {},
   series: [
@@ -48,7 +48,7 @@ https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/
     }
   ]
 };"
-"",ABC,,"option = {
+,ABC,,"option = {
   xAxis: {},
   yAxis: {},
   series: [
@@ -82,7 +82,7 @@ https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/
     }
   ]
 };"
-"",,,"option = {
+,,,"option = {
   xAxis: {},
   yAxis: {},
   series: [
@@ -116,7 +116,7 @@ https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/
     }
   ]
 };"
-"",,,"option = {
+,,,"option = {
   xAxis: {},
   yAxis: {},
   series: [

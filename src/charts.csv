@@ -1,20 +1,20 @@
 cover,title,type,data
-https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/bar-simple.webp?_v_=1635740497748,Basic Bar,bar,"option = {\n' +
-            '  xAxis: {\n' +
-            '    type: \'category\',\n' +
-            '    data: [\'Mon\', \'Tue\', \'Wed\', \'Thu\', \'Fri\', \'Sat\', \'Sun\']\n' +
-            '  },\n' +
-            '  yAxis: {\n' +
-            '    type: \'value\'\n' +
-            '  },\n' +
-            '  series: [\n' +
-            '    {\n' +
-            '      data: [120, 200, 150, 80, 70, 110, 130],\n' +
-            '      type: \'bar\'\n' +
-            '    }\n' +
-            '  ]\n' +
-            '};"
-blob:http://localhost:8080/27e653e4-3ae9-4b52-95bf-82b0db976578,Line,,"option = {
+https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/bar-simple.webp?_v_=1635740497748,Basic Bar,bar,"option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 130],
+      type: 'bar'
+    }
+  ]
+};"
+http://localhost:8443/images/2022.04.02/25770076-583d-45c7-aa19-5ea1ca1225a4.png,Radar,,"option = {
     title: {
       text: 'Title Test',
     },
@@ -32,196 +32,4 @@ blob:http://localhost:8080/27e653e4-3ae9-4b52-95bf-82b0db976578,Line,,"option = 
         type: 'line'
       }
     ]
-};"
-blob:http://localhost:8080/9582b19a-a109-476b-a5a3-dcf7a95ce7b8,Bar,,"option = {
-  xAxis: {
-    type: 'category',
-    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  },
-  yAxis: {
-    type: 'value'
-  },
-  series: [
-    {
-      data: [120, 200, 150, 80, 70, 110, 130],
-      type: 'bar'
-    }
-  ]
-};"
-blob:http://localhost:8080/f2d05756-1b8d-4ec1-953b-44016c267b50,Pie,,"option = {
-  title: {
-    text: 'Referer of a Website',
-    subtext: 'Fake Data',
-    left: 'center'
-  },
-  tooltip: {
-    trigger: 'item'
-  },
-  legend: {
-    orient: 'vertical',
-    left: 'left'
-  },
-  series: [
-    {
-      name: 'Access From',
-      type: 'pie',
-      radius: '50%',
-      data: [
-        { value: 1048, name: 'Search Engine' },
-        { value: 735, name: 'Direct' },
-        { value: 580, name: 'Email' },
-        { value: 484, name: 'Union Ads' },
-        { value: 300, name: 'Video Ads' }
-      ],
-      emphasis: {
-        itemStyle: {
-          shadowBlur: 10,
-          shadowOffsetX: 0,
-          shadowColor: 'rgba(0, 0, 0, 0.5)'
-        }
-      }
-    }
-  ]
-};"
-blob:http://localhost:8080/0f7173df-ef24-4fe6-9346-5dd82cdc5975,Radar,,"option = {
-  title: {
-    text: 'Basic Radar Chart',
-  },
-  legend: {
-    data: ['Allocated Budget', 'Actual Spending']
-  },
-  radar: {
-    indicator: [
-      { name: 'Sales', max: 6500 },
-      { name: 'Administration', max: 16000 },
-      { name: 'Information Technology', max: 30000 },
-      { name: 'Customer Support', max: 38000 },
-      { name: 'Development', max: 52000 },
-      { name: 'Marketing', max: 25000 }
-    ]
-  },
-  series: [
-    {
-      name: 'Budget vs spending',
-      type: 'radar',
-      data: [
-        {
-          value: [4200, 3000, 20000, 35000, 50000, 18000],
-          name: 'Allocated Budget'
-        },
-        {
-          value: [5000, 14000, 28000, 26000, 42000, 21000],
-          name: 'Actual Spending'
-        }
-      ]
-    }
-  ]
-};"
-blob:http://localhost:8080/062770d6-5eee-46cb-879f-bdc04a5a119e,Multi Bar,,"option = {
-  legend: {},
-  tooltip: {},
-  dataset: {
-    source: [
-      ['Group', 'Group1', 'Group2', 'Group3'],
-      ['Mon', 724, 403, 241],
-      ['Tue', 434, 527, 247],
-      ['Wed', 846, 288, 307],
-      ['Thu', 893, 492, 255],
-      ['Fri', 921, 623, 155],
-      ['Sat', 747, 630, 185],
-      ['Sun', 967, 361, 233],
-    ]
-  },
-  xAxis: { type: 'category' },
-  yAxis: {},
-  series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
-};"
-blob:http://localhost:8080/208862f9-9c17-4093-bb7d-bbf6ac636199,MultiBar,,"option = {
-  legend: {},
-  tooltip: {},
-  dataset: {
-    source: [
-      ['Group', 'Group1', 'Group2', 'Group3'],
-      ['Mon', 724, 403, 241],
-      ['Tue', 434, 527, 247],
-      ['Wed', 846, 288, 307],
-      ['Thu', 893, 492, 255],
-      ['Fri', 921, 623, 155],
-      ['Sat', 747, 630, 185],
-      ['Sun', 967, 361, 233],
-    ]
-  },
-  xAxis: {
-    type: 'category'
-  },
-  yAxis: {},
-  series: [{
-    type: 'bar'
-  }, {
-    type: 'bar'
-  }, {
-    type: 'bar'
-  }]
-};"
-blob:http://localhost:8080/f92d4c41-32cb-4ce7-a476-a166cad35fb2,Mu Line,,"option = {
-  title: {
-    text: 'Stacked Line'
-  },
-  tooltip: {
-    trigger: 'axis'
-  },
-  legend: {
-    data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
-  },
-  grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
-    containLabel: true
-  },
-  toolbox: {
-    feature: {
-      saveAsImage: {}
-    }
-  },
-  xAxis: {
-    type: 'category',
-    boundaryGap: false,
-    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  },
-  yAxis: {
-    type: 'value'
-  },
-  series: [
-    {
-      name: 'Email',
-      type: 'line',
-      stack: 'Total',
-      data: [120, 132, 101, 134, 90, 230, 210]
-    },
-    {
-      name: 'Union Ads',
-      type: 'line',
-      stack: 'Total',
-      data: [220, 182, 191, 234, 290, 330, 310]
-    },
-    {
-      name: 'Video Ads',
-      type: 'line',
-      stack: 'Total',
-      data: [150, 232, 201, 154, 190, 330, 410]
-    },
-    {
-      name: 'Direct',
-      type: 'line',
-      stack: 'Total',
-      data: [320, 332, 301, 334, 390, 330, 320]
-    },
-    {
-      name: 'Search Engine',
-      type: 'line',
-      stack: 'Total',
-      data: [820, 932, 901, 934, 1290, 1330, 1320]
-    }
-  ]
 };"

@@ -14,22 +14,3 @@ https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/
     }
   ]
 };"
-http://localhost:8443/images/2022.04.02/25770076-583d-45c7-aa19-5ea1ca1225a4.png,Radar,,"option = {
-    title: {
-      text: 'Title Test',
-    },
-    tooltip: {},
-    xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [
-      {
-        data: [150, 230, 224, 218, 135, 147, 260],
-        type: 'line'
-      }
-    ]
-};"

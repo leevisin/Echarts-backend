@@ -33,6 +33,11 @@ public class UserController {
     @PostMapping(value = "api/addChart")
     @ResponseBody
     public List addChart(@RequestBody Chart chart) throws IOException {
+        // imgUrl can't be null
+        if (imgUrl == "") {
+            return updateChart();
+        }
+
         // Write Csv
         String filePath = "src/charts.csv";
         File f = new File(filePath);
@@ -64,9 +69,9 @@ public class UserController {
             // 读内容
             while (csvReader.readRecord()) {
                 // 读一整行
-                System.out.println(csvReader.getRawRecord());
+//                System.out.println(csvReader.getRawRecord());
                 // 读该行的某一列
-                System.out.println(csvReader.get("title"));
+//                System.out.println(csvReader.get("title"));
                 Chart aChart = new Chart();
                 aChart.setCover(csvReader.get("cover"));
                 aChart.setTitle(csvReader.get("title"));
@@ -79,6 +84,19 @@ public class UserController {
         }
 
         return list;
+    }
+
+    @CrossOrigin
+    @PostMapping(value = "api/deleteChart")
+    @ResponseBody
+    public List deleteChart(@RequestBody Chart chart) throws IOException {
+        List list = updateChart();
+        System.out.println(chart);
+        System.out.println(chart.getCover());
+        System.out.println(chart.getTitle());
+        System.out.println(chart.getData());
+
+        return updateChart();
     }
 
     SimpleDateFormat sdf = new SimpleDateFormat("/yyyy.MM.dd/");

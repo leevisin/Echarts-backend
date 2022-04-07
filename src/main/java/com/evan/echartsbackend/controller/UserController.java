@@ -90,11 +90,43 @@ public class UserController {
     @PostMapping(value = "api/deleteChart")
     @ResponseBody
     public List deleteChart(@RequestBody Chart chart) throws IOException {
-        List list = updateChart();
-        System.out.println(chart);
-        System.out.println(chart.getCover());
-        System.out.println(chart.getTitle());
-        System.out.println(chart.getData());
+        String filePath = "src/charts.csv";
+        String fileTmpPath = "src/chartsTmp.csv";
+
+        // Delete Chart and write to chartsTmp.csv
+        try {
+            CsvReader csvReader = new CsvReader(filePath);
+            csvReader.readHeaders();
+            File f = new File(fileTmpPath);
+            BufferedWriter writer = new BufferedWriter(new FileWriter(f,false));
+            CsvWriter cwriter = new CsvWriter(writer,',');
+            cwriter.writeRecord(new String[]{"cover", "title", "type", "data"},false);
+            while (csvReader.readRecord()) {
+                if (chart.getCover().equals(csvReader.get("cover"))) {
+                    continue;
+                }
+                cwriter.writeRecord(new String[]{csvReader.get("cover"), csvReader.get("title"), csvReader.get("type"), csvReader.get("data")},false);
+            }
+            cwriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Copy chartsTmp.csv to charts.csv
+        try {
+            CsvReader csvReader = new CsvReader(fileTmpPath);
+            csvReader.readHeaders();
+            File f = new File(filePath);
+            BufferedWriter writer = new BufferedWriter(new FileWriter(f,false));
+            CsvWriter cwriter = new CsvWriter(writer,',');
+            cwriter.writeRecord(new String[]{"cover", "title", "type", "data"},false);
+            while (csvReader.readRecord()) {
+                cwriter.writeRecord(new String[]{csvReader.get("cover"), csvReader.get("title"), csvReader.get("type"), csvReader.get("data")},false);
+            }
+            cwriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return updateChart();
     }
@@ -107,12 +139,12 @@ public class UserController {
     @PostMapping("/upload")
     public Map<String, Object> fileupload(MultipartFile file, HttpServletRequest req){
 
-        System.out.println(fileSavePath);
+//        System.out.println(fileSavePath);
         Map<String,Object> result = new HashMap<>();
         //获取文件的名字
-        System.out.println(file);
+//        System.out.println(file);
         String originName = file.getOriginalFilename();
-        System.out.println("originName:"+originName);
+//        System.out.println("originName:"+originName);
         //判断文件类型
         if(!originName.endsWith(".png")) {
             result.put("status","error");
@@ -122,7 +154,7 @@ public class UserController {
         //给上传的文件新建目录
         String format = sdf.format(new Date());
         String realPath = fileSavePath + format;
-        System.out.println("realPath:"+realPath);
+//        System.out.println("realPath:"+realPath);
         //若目录不存在则创建目录
         File folder = new File(realPath);
         if(! folder.exists()) {
@@ -135,7 +167,7 @@ public class UserController {
             file.transferTo(new File(folder,newName));
             //生成返回给前端的url
             String url = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() +"/images"+ format + newName;
-            System.out.println("url:"+url);
+//            System.out.println("url:"+url);
             imgUrl = url;
             //返回URL
             result.put("status", "success");

@@ -147,22 +147,3 @@ http://localhost:8443/images/2022.04.07/64677590-a5f9-4815-9f4c-a2fd1371a241.png
       }
     ]
 };"
-http://localhost:8443/images/2022.04.07/ec209bae-e7ba-4c6a-b03d-3446624ba1ef.png,,,"option = {
-    title: {
-      text: 'Title Test',
-    },
-    tooltip: {},
-    xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [
-      {
-        data: [150, 230, 224, 218, 135, 147, 260],
-        type: 'line'
-      }
-    ]
-};"

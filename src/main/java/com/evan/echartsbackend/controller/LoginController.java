@@ -21,6 +21,9 @@ public class LoginController {
         String username = requestUser.getUsername();
         username = HtmlUtils.htmlEscape(username);
 
+        System.out.println("Username: " + username);
+        System.out.println("Password: " + requestUser.getPassword());
+
         if (Objects.equals("admin", username) && Objects.equals("123456", requestUser.getPassword())) {
             UserCache.setUsername(username);
             return new Result(200);
@@ -29,8 +32,6 @@ public class LoginController {
             return new Result(200);
         } else {
             String message = "账号密码错误";
-            System.out.println("Username: " + username);
-            System.out.println("Password: " + requestUser.getPassword());
             UserCache.setUsername("");
             return new Result(400);
         }

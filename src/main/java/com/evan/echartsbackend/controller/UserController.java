@@ -60,7 +60,7 @@ public class UserController {
     @ResponseBody
     public List updateChart() {
         getUsername();
-        System.out.println("filePath in updateChart: " + filePath);
+//        System.out.println("filePath in updateChart: " + filePath);
 //        String filePath = "src/charts.csv";
         // New list to return stored charts
         List list = new ArrayList();
@@ -180,11 +180,11 @@ public class UserController {
     @PostMapping(value = "api/getUsername")
     @ResponseBody
     public String getUsername() {
-        System.out.println(UserCache.getUsername());
+//        System.out.println(UserCache.getUsername());
         filePath = "src/data/"+ UserCache.getUsername() + "charts.csv";
         fileTmpPath = "src/data/" + UserCache.getUsername() + "chartsTmp.csv";
-        System.out.println("filePath: " + filePath);
-        System.out.println("fileTmpPath: " + fileTmpPath);
+//        System.out.println("filePath: " + filePath);
+//        System.out.println("fileTmpPath: " + fileTmpPath);
         return UserCache.getUsername();
     }
 

@@ -29,8 +29,8 @@ import java.util.UUID;
 public class UserController {
 
     String imgUrl = "";
-    String filePath = "src/charts.csv";
-    String fileTmpPath = "src/chartsTmp.csv";
+    String filePath = "src/data/charts.csv";
+    String fileTmpPath = "src/data/chartsTmp.csv";
 
     @CrossOrigin
     @PostMapping(value = "api/addChart")
@@ -181,8 +181,8 @@ public class UserController {
     @ResponseBody
     public String getUsername() {
         System.out.println(UserCache.getUsername());
-        filePath = "src/"+ UserCache.getUsername() + "charts.csv";
-        fileTmpPath = "src/" + UserCache.getUsername() + "chartsTmp.csv";
+        filePath = "src/data/"+ UserCache.getUsername() + "charts.csv";
+        fileTmpPath = "src/data/" + UserCache.getUsername() + "chartsTmp.csv";
         System.out.println("filePath: " + filePath);
         System.out.println("fileTmpPath: " + fileTmpPath);
         return UserCache.getUsername();

@@ -5,6 +5,7 @@ import com.csvreader.CsvWriter;
 import com.evan.echartsbackend.pojo.Chart;
 import com.evan.echartsbackend.result.Result;
 import com.evan.echartsbackend.result.Charts;
+import com.evan.echartsbackend.util.UserCache;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -56,6 +57,7 @@ public class UserController {
     @PostMapping(value = "api/updateChart")
     @ResponseBody
     public List updateChart() {
+        System.out.println(UserCache.getUsername());
         String filePath = "src/charts.csv";
         // New list to return stored charts
         List list = new ArrayList();
@@ -169,6 +171,14 @@ public class UserController {
             result.put("msg",e.getMessage());
         }
         return result;
+    }
+
+    @CrossOrigin
+    @PostMapping(value = "api/getUsername")
+    @ResponseBody
+    public String getUsername() {
+        System.out.println(UserCache.getUsername());
+        return UserCache.getUsername();
     }
 
 }

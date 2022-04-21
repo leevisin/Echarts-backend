@@ -1,0 +1,96 @@
+cover,title,type,data
+http://localhost:8443/images/2022.04.07/5fe19916-bdec-4d3f-b9b3-dbfced3e7c52.png,Bar,,"option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 130],
+      type: 'bar'
+    }
+  ]
+};"
+http://localhost:8443/images/2022.04.07/c0d41a25-e78d-46d4-bfba-c6bf28393f22.png,Pie Image,,"option = {
+    grid: {
+        show: true,
+        backgroundColor: ""rgba(220, 153, 153, 1)"",
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: ""none""
+            },
+            saveAsImage: {
+                show: true
+            },
+        }
+    },
+    title: {
+        text: 'AAA',
+        textStyle: {
+            color: ""rgba(74, 13, 13, 1)"",
+            fontSize: 30,
+        },
+        subtext: 'hjfdsa',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left'
+    },
+    series: [{
+        name: 'Access From',
+        type: 'pie',
+        radius: '50%',
+        data: [{
+            value: 1048,
+            name: 'Search Engine'
+        }, {
+            value: 735,
+            name: 'Direct'
+        }, {
+            value: 580,
+            name: 'Email'
+        }, {
+            value: 484,
+            name: 'Union Ads'
+        }, {
+            value: 300,
+            name: 'Video Ads'
+        }],
+        emphasis: {
+            itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+        }
+    }]
+};"
+http://localhost:8443/images/2022.04.07/64677590-a5f9-4815-9f4c-a2fd1371a241.png,Line Chart,,"option = {
+    title: {
+      text: 'Title Test',
+    },
+    tooltip: {},
+    xAxis: {
+      type: 'category',
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: [
+      {
+        data: [150, 230, 224, 218, 135, 147, 260],
+        type: 'line'
+      }
+    ]
+};"

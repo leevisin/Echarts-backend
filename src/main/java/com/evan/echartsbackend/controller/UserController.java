@@ -29,6 +29,8 @@ import java.util.UUID;
 public class UserController {
 
     String imgUrl = "";
+    String filePath = "src/charts.csv";
+    String fileTmpPath = "src/chartsTmp.csv";
 
     @CrossOrigin
     @PostMapping(value = "api/addChart")
@@ -40,7 +42,7 @@ public class UserController {
         }
 
         // Write Csv
-        String filePath = "src/charts.csv";
+//        String filePath = "src/charts.csv";
         File f = new File(filePath);
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(f,true));
@@ -57,8 +59,9 @@ public class UserController {
     @PostMapping(value = "api/updateChart")
     @ResponseBody
     public List updateChart() {
-        System.out.println(UserCache.getUsername());
-        String filePath = "src/charts.csv";
+        getUsername();
+        System.out.println("filePath in updateChart: " + filePath);
+//        String filePath = "src/charts.csv";
         // New list to return stored charts
         List list = new ArrayList();
         // Read Csv
@@ -88,8 +91,8 @@ public class UserController {
     @PostMapping(value = "api/deleteChart")
     @ResponseBody
     public List deleteChart(@RequestBody Chart chart) throws IOException {
-        String filePath = "src/charts.csv";
-        String fileTmpPath = "src/chartsTmp.csv";
+//        String filePath = "src/charts.csv";
+//        String fileTmpPath = "src/chartsTmp.csv";
 
         // Delete Chart and write to chartsTmp.csv
         try {
@@ -178,6 +181,10 @@ public class UserController {
     @ResponseBody
     public String getUsername() {
         System.out.println(UserCache.getUsername());
+        filePath = "src/"+ UserCache.getUsername() + "charts.csv";
+        fileTmpPath = "src/" + UserCache.getUsername() + "chartsTmp.csv";
+        System.out.println("filePath: " + filePath);
+        System.out.println("fileTmpPath: " + fileTmpPath);
         return UserCache.getUsername();
     }
 

@@ -1,19 +1,4 @@
 cover,title,type,data
-http://localhost:8443/images/2022.04.07/5fe19916-bdec-4d3f-b9b3-dbfced3e7c52.png,Bar,,"option = {
-  xAxis: {
-    type: 'category',
-    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  },
-  yAxis: {
-    type: 'value'
-  },
-  series: [
-    {
-      data: [120, 200, 150, 80, 70, 110, 130],
-      type: 'bar'
-    }
-  ]
-};"
 http://localhost:8443/images/2022.04.07/c0d41a25-e78d-46d4-bfba-c6bf28393f22.png,Pie Image,,"option = {
     grid: {
         show: true,
@@ -75,40 +60,6 @@ http://localhost:8443/images/2022.04.07/c0d41a25-e78d-46d4-bfba-c6bf28393f22.png
         }
     }]
 };"
-http://localhost:8443/images/2022.04.07/50889d41-a46c-4115-9731-43c455871265.png,Rada Image,,"option = {
-  title: {
-    text: 'Basic Radar Chart',
-  },
-  legend: {
-    data: ['Allocated Budget', 'Actual Spending']
-  },
-  radar: {
-    indicator: [
-      { name: 'Sales', max: 6500 },
-      { name: 'Administration', max: 16000 },
-      { name: 'Information Technology', max: 30000 },
-      { name: 'Customer Support', max: 38000 },
-      { name: 'Development', max: 52000 },
-      { name: 'Marketing', max: 25000 }
-    ]
-  },
-  series: [
-    {
-      name: 'Budget vs spending',
-      type: 'radar',
-      data: [
-        {
-          value: [4200, 3000, 20000, 35000, 50000, 18000],
-          name: 'Allocated Budget'
-        },
-        {
-          value: [5000, 14000, 28000, 26000, 42000, 21000],
-          name: 'Actual Spending'
-        }
-      ]
-    }
-  ]
-};"
 http://localhost:8443/images/2022.04.07/91cc2217-cb95-4231-aa40-38b640badfd2.png,Multi Bar,,"option = {
   legend: {},
   tooltip: {},
@@ -127,23 +78,4 @@ http://localhost:8443/images/2022.04.07/91cc2217-cb95-4231-aa40-38b640badfd2.png
   xAxis: { type: 'category' },
   yAxis: {},
   series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
-};"
-http://localhost:8443/images/2022.04.07/64677590-a5f9-4815-9f4c-a2fd1371a241.png,Line Chart,,"option = {
-    title: {
-      text: 'Title Test',
-    },
-    tooltip: {},
-    xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [
-      {
-        data: [150, 230, 224, 218, 135, 147, 260],
-        type: 'line'
-      }
-    ]
 };"

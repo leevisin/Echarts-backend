@@ -52,6 +52,7 @@ public class UserController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        imgUrl = "";
         return updateChart();
     }
 

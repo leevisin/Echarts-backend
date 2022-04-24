@@ -1,58 +1,210 @@
 cover,title,type,data
-http://localhost:8443/images/2022.04.21/c302c001-1d42-4b4f-9044-4c3954eddd4a.png,Test1,,"option = {
+http://localhost:8443/images/2022.04.24/9e558ce4-d912-4192-bee4-98a94251881f.png,Two Value-Axes in Polar,,"const data = [];
+for (let i = 0; i <= 100; i++) {
+    let theta = (i / 100) * 360;
+    let r = 5 * (1 + Math.sin((theta / 180) * Math.PI));
+    data.push([r, theta]);
+}
+option = {
     title: {
-      text: 'Title Test',
+        text: 'Two Value-Axes in Polar'
     },
-    tooltip: {},
-    xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    legend: {
+        data: ['line']
     },
-    yAxis: {
-      type: 'value'
+    polar: {},
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross'
+        }
     },
-    series: [
-      {
-        data: [150, 230, 224, 218, 135, 147, 260],
-        type: 'line'
-      }
+    angleAxis: {
+        type: 'value',
+        startAngle: 0
+    },
+    radiusAxis: {},
+    series: [{
+        coordinateSystem: 'polar',
+        name: 'line',
+        type: 'line',
+        data: data
+    }]
+};"
+http://localhost:8443/images/2022.04.24/5bb9de21-6d93-46e0-9ed6-1ef2a4426d2f.png,Rainfall and Evaporation,,"option = {
+    title: {
+        text: 'Rainfall vs Evaporation',
+        subtext: 'Fake Data'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['Rainfall', 'Evaporation']
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataView: {
+                show: true,
+                readOnly: false
+            },
+            magicType: {
+                show: true,
+                type: ['line', 'bar']
+            },
+            restore: {
+                show: true
+            },
+            saveAsImage: {
+                show: true
+            }
+        }
+    },
+    calculable: true,
+    xAxis: [{
+        type: 'category',
+        // prettier-ignore
+        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    }],
+    yAxis: [{
+        type: 'value'
+    }],
+    series: [{
+            name: 'Rainfall',
+            type: 'bar',
+            data: [
+                2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
+            ],
+            markPoint: {
+                data: [{
+                        type: 'max',
+                        name: 'Max'
+                    },
+                    {
+                        type: 'min',
+                        name: 'Min'
+                    }
+                ]
+            },
+            markLine: {
+                data: [{
+                    type: 'average',
+                    name: 'Avg'
+                }]
+            }
+        },
+        {
+            name: 'Evaporation',
+            type: 'bar',
+            data: [
+                2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
+            ],
+            markPoint: {
+                data: [{
+                        name: 'Max',
+                        value: 182.2,
+                        xAxis: 7,
+                        yAxis: 183
+                    },
+                    {
+                        name: 'Min',
+                        value: 2.3,
+                        xAxis: 11,
+                        yAxis: 3
+                    }
+                ]
+            },
+            markLine: {
+                data: [{
+                    type: 'average',
+                    name: 'Avg'
+                }]
+            }
+        }
     ]
 };"
-http://localhost:8443/images/2022.04.21/000f481a-7ffc-47db-bff6-f28d891cbef5.png,Test2,,"option = {
-    title: {
-      text: 'Title Test',
+http://localhost:8443/images/2022.04.24/4fe6d12e-6b33-4d03-b43f-330a43d847fe.png,Stacked Horizontal Bar,,"option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            // Use axis to trigger tooltip
+            type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+        }
     },
-    tooltip: {},
+    legend: {},
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
     xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        type: 'value'
     },
     yAxis: {
-      type: 'value'
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     },
-    series: [
-      {
-        data: [150, 230, 224, 218, 135, 147, 260],
-        type: 'line'
-      }
-    ]
-};"
-http://localhost:8443/images/2022.04.21/d33bc2c7-d6d4-48b0-806a-d075f8152373.png,Test3,,"option = {
-    title: {
-      text: 'Title Test',
-    },
-    tooltip: {},
-    xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [
-      {
-        data: [150, 230, 224, 218, 135, 147, 260],
-        type: 'line'
-      }
+    series: [{
+            name: 'Direct',
+            type: 'bar',
+            stack: 'total',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [320, 302, 301, 334, 390, 330, 320]
+        },
+        {
+            name: 'Mail Ad',
+            type: 'bar',
+            stack: 'total',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            name: 'Affiliate Ad',
+            type: 'bar',
+            stack: 'total',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            name: 'Video Ad',
+            type: 'bar',
+            stack: 'total',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [150, 212, 201, 154, 190, 330, 410]
+        },
+        {
+            name: 'Search Engine',
+            type: 'bar',
+            stack: 'total',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [820, 832, 901, 934, 1290, 1330, 1320]
+        }
     ]
 };"

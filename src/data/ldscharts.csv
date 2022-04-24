@@ -75,22 +75,247 @@ http://localhost:8443/images/2022.04.07/c0d41a25-e78d-46d4-bfba-c6bf28393f22.png
         }
     }]
 };"
-http://localhost:8443/images/2022.04.07/64677590-a5f9-4815-9f4c-a2fd1371a241.png,Line Chart,,"option = {
+http://localhost:8443/images/2022.04.24/8e89f4c2-a53b-4a44-bdd3-f00b026a2f74.png,Sales,,"option = {
     title: {
-      text: 'Title Test',
+        text: 'Sales',
     },
     tooltip: {},
     xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        type: 'category',
+        data: [{
+            value: 'Life',
+        }, {
+            value: 'Health',
+        }, {
+            value: 'Center',
+        }, {
+            value: 'Operations ',
+        }, {
+            value: 'No. 88',
+        }, {
+            value: 'System',
+        }, {
+            value: 'Database',
+        }, {
+            value: 'Security',
+        }, {
+            value: 'Network',
+        }]
     },
     yAxis: {
-      type: 'value'
+        type: 'value'
     },
-    series: [
-      {
-        data: [150, 230, 224, 218, 135, 147, 260],
+    series: [{
+        data: [{
+            name: 'Life',
+            value: '5'
+        }, {
+            name: 'Health',
+            value: '7'
+        }, {
+            name: 'Center',
+            value: '18'
+        }, {
+            name: 'Operations ',
+            value: '12'
+        }, {
+            name: 'No. 88',
+            value: '21'
+        }, {
+            name: 'System',
+            value: '25'
+        }, {
+            name: 'Database',
+            value: '3'
+        }, {
+            name: 'Security',
+            value: '34'
+        }, {
+            name: 'Network',
+            value: '22'
+        }],
         type: 'line'
-      }
-    ]
+    }]
+};"
+http://localhost:8443/images/2022.04.24/84095f0b-d6ae-4f07-a26c-dd703b9056a4.png,Doughnut Chart,,"option = {
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        top: '5%',
+        left: 'center'
+    },
+    series: [{
+        name: 'Access From',
+        type: 'pie',
+        radius: ['40%', '70%'],
+        avoidLabelOverlap: false,
+        label: {
+            show: false,
+            position: 'center'
+        },
+        emphasis: {
+            label: {
+                show: true,
+                fontSize: '40',
+                fontWeight: 'bold'
+            }
+        },
+        labelLine: {
+            show: false
+        },
+        data: [{
+                value: 1048,
+                name: 'Search Engine'
+            },
+            {
+                value: 735,
+                name: 'Direct'
+            },
+            {
+                value: 580,
+                name: 'Email'
+            },
+            {
+                value: 484,
+                name: 'Union Ads'
+            },
+            {
+                value: 300,
+                name: 'Video Ads'
+            }
+        ]
+    }]
+};"
+http://localhost:8443/images/2022.04.24/0388a42e-f1b9-44b8-a9c3-619b978a36b8.png,Word Cloud of Sales,,"option = {
+    title: {
+        text: ""Hot Word"",
+        textStyle: {
+            color: ""#148D75"",
+        },
+        top: 14,
+        left: 26,
+    },
+    series: [{
+        type: ""wordCloud"",
+        size: [""80%"", ""80%""],
+        rotationRange: [-90, 90],
+        textPadding: 0,
+        autoSize: {
+            enable: true,
+            minSize: 14,
+        },
+        left: ""center"",
+        top: ""center"",
+        right: null,
+        bottom: null,
+        textStyle: {
+            color: function() {
+                return 'rgb(' + [Math.round(Math.random() * 160), Math.round(Math.random() * 160), Math.round(Math.random() * 160)].join(',') + ')';
+            },
+        },
+        data: [{
+            name: 'Life',
+            value: '5'
+        }, {
+            name: 'Health',
+            value: '7'
+        }, {
+            name: 'Center',
+            value: '18'
+        }, {
+            name: 'Operations ',
+            value: '12'
+        }, {
+            name: 'No. 88',
+            value: '21'
+        }, {
+            name: 'System',
+            value: '25'
+        }, {
+            name: 'Database',
+            value: '3'
+        }, {
+            name: 'Security',
+            value: '34'
+        }, {
+            name: 'Network',
+            value: '22'
+        }],
+    }, ],
+};"
+http://localhost:8443/images/2022.04.24/52dc5870-dd1f-438c-804c-8aed3e6bf9be.png,Master Painter Color,,"myChart.showLoading();
+$.get(
+    ROOT_PATH + '/data/asset/data/masterPainterColorChoice.json',
+    function(json) {
+        myChart.hideLoading();
+        var data = json[0].x.map(function(x, idx) {
+            return [+x, +json[0].y[idx]];
+        });
+        myChart.setOption(
+            (option = {
+                title: {
+                    text: 'Master Painter Color Choices Throughout History',
+                    subtext: 'Data From Plot.ly',
+                    left: 'right'
+                },
+                xAxis: {
+                    type: 'value',
+                    splitLine: {
+                        show: false
+                    },
+                    scale: true,
+                    splitNumber: 5,
+                    max: 'dataMax',
+                    axisLabel: {
+                        formatter: function(val) {
+                            return val + 's';
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    min: 0,
+                    max: 360,
+                    interval: 60,
+                    name: 'Hue',
+                    splitLine: {
+                        show: false
+                    }
+                },
+                series: [{
+                    name: 'scatter',
+                    type: 'scatter',
+                    symbolSize: function(val, param) {
+                        return (
+                            json[0].marker.size[param.dataIndex] / json[0].marker.sizeref
+                        );
+                    },
+                    itemStyle: {
+                        color: function(param) {
+                            return json[0].marker.color[param.dataIndex];
+                        }
+                    },
+                    data: data
+                }]
+            })
+        );
+    }
+);"
+http://localhost:8443/images/2022.04.24/dc486c4c-517e-4077-8545-ee701577b17f.png,Bar with Background,,"option = {
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data: [120, 200, 150, 80, 70, 110, 130],
+        type: 'bar',
+        showBackground: true,
+        backgroundStyle: {
+            color: 'rgba(180, 180, 180, 0.2)'
+        }
+    }]
 };"

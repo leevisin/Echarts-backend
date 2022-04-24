@@ -31,99 +31,6 @@ option = {
         data: data
     }]
 };"
-http://localhost:8443/images/2022.04.24/5bb9de21-6d93-46e0-9ed6-1ef2a4426d2f.png,Rainfall and Evaporation,,"option = {
-    title: {
-        text: 'Rainfall vs Evaporation',
-        subtext: 'Fake Data'
-    },
-    tooltip: {
-        trigger: 'axis'
-    },
-    legend: {
-        data: ['Rainfall', 'Evaporation']
-    },
-    toolbox: {
-        show: true,
-        feature: {
-            dataView: {
-                show: true,
-                readOnly: false
-            },
-            magicType: {
-                show: true,
-                type: ['line', 'bar']
-            },
-            restore: {
-                show: true
-            },
-            saveAsImage: {
-                show: true
-            }
-        }
-    },
-    calculable: true,
-    xAxis: [{
-        type: 'category',
-        // prettier-ignore
-        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    }],
-    yAxis: [{
-        type: 'value'
-    }],
-    series: [{
-            name: 'Rainfall',
-            type: 'bar',
-            data: [
-                2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
-            ],
-            markPoint: {
-                data: [{
-                        type: 'max',
-                        name: 'Max'
-                    },
-                    {
-                        type: 'min',
-                        name: 'Min'
-                    }
-                ]
-            },
-            markLine: {
-                data: [{
-                    type: 'average',
-                    name: 'Avg'
-                }]
-            }
-        },
-        {
-            name: 'Evaporation',
-            type: 'bar',
-            data: [
-                2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
-            ],
-            markPoint: {
-                data: [{
-                        name: 'Max',
-                        value: 182.2,
-                        xAxis: 7,
-                        yAxis: 183
-                    },
-                    {
-                        name: 'Min',
-                        value: 2.3,
-                        xAxis: 11,
-                        yAxis: 3
-                    }
-                ]
-            },
-            markLine: {
-                data: [{
-                    type: 'average',
-                    name: 'Avg'
-                }]
-            }
-        }
-    ]
-};"
 http://localhost:8443/images/2022.04.24/4fe6d12e-6b33-4d03-b43f-330a43d847fe.png,Stacked Horizontal Bar,,"option = {
     tooltip: {
         trigger: 'axis',
@@ -207,4 +114,70 @@ http://localhost:8443/images/2022.04.24/4fe6d12e-6b33-4d03-b43f-330a43d847fe.png
             data: [820, 832, 901, 934, 1290, 1330, 1320]
         }
     ]
+};"
+http://localhost:8443/images/2022.04.24/8e6a90b2-ec00-4d48-8c37-3ba487aa7055.png,Nightingale Chart,,"option = {
+    legend: {
+        top: 'bottom'
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            mark: {
+                show: true
+            },
+            dataView: {
+                show: true,
+                readOnly: false
+            },
+            restore: {
+                show: true
+            },
+            saveAsImage: {
+                show: true
+            }
+        }
+    },
+    series: [{
+        name: 'Nightingale Chart',
+        type: 'pie',
+        radius: [50, 250],
+        center: ['50%', '50%'],
+        roseType: 'area',
+        itemStyle: {
+            borderRadius: 8
+        },
+        data: [{
+                value: 40,
+                name: 'rose 1'
+            },
+            {
+                value: 38,
+                name: 'rose 2'
+            },
+            {
+                value: 32,
+                name: 'rose 3'
+            },
+            {
+                value: 30,
+                name: 'rose 4'
+            },
+            {
+                value: 28,
+                name: 'rose 5'
+            },
+            {
+                value: 26,
+                name: 'rose 6'
+            },
+            {
+                value: 22,
+                name: 'rose 7'
+            },
+            {
+                value: 18,
+                name: 'rose 8'
+            }
+        ]
+    }]
 };"

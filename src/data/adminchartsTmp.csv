@@ -1,1 +1,183 @@
 cover,title,type,data
+http://localhost:8443/images/2022.04.24/9e558ce4-d912-4192-bee4-98a94251881f.png,Two Value-Axes in Polar,,"const data = [];
+for (let i = 0; i <= 100; i++) {
+    let theta = (i / 100) * 360;
+    let r = 5 * (1 + Math.sin((theta / 180) * Math.PI));
+    data.push([r, theta]);
+}
+option = {
+    title: {
+        text: 'Two Value-Axes in Polar'
+    },
+    legend: {
+        data: ['line']
+    },
+    polar: {},
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross'
+        }
+    },
+    angleAxis: {
+        type: 'value',
+        startAngle: 0
+    },
+    radiusAxis: {},
+    series: [{
+        coordinateSystem: 'polar',
+        name: 'line',
+        type: 'line',
+        data: data
+    }]
+};"
+http://localhost:8443/images/2022.04.24/4fe6d12e-6b33-4d03-b43f-330a43d847fe.png,Stacked Horizontal Bar,,"option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            // Use axis to trigger tooltip
+            type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+        }
+    },
+    legend: {},
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    series: [{
+            name: 'Direct',
+            type: 'bar',
+            stack: 'total',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [320, 302, 301, 334, 390, 330, 320]
+        },
+        {
+            name: 'Mail Ad',
+            type: 'bar',
+            stack: 'total',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            name: 'Affiliate Ad',
+            type: 'bar',
+            stack: 'total',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            name: 'Video Ad',
+            type: 'bar',
+            stack: 'total',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [150, 212, 201, 154, 190, 330, 410]
+        },
+        {
+            name: 'Search Engine',
+            type: 'bar',
+            stack: 'total',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [820, 832, 901, 934, 1290, 1330, 1320]
+        }
+    ]
+};"
+http://localhost:8443/images/2022.04.24/8e6a90b2-ec00-4d48-8c37-3ba487aa7055.png,Nightingale Chart,,"option = {
+    legend: {
+        top: 'bottom'
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            mark: {
+                show: true
+            },
+            dataView: {
+                show: true,
+                readOnly: false
+            },
+            restore: {
+                show: true
+            },
+            saveAsImage: {
+                show: true
+            }
+        }
+    },
+    series: [{
+        name: 'Nightingale Chart',
+        type: 'pie',
+        radius: [50, 250],
+        center: ['50%', '50%'],
+        roseType: 'area',
+        itemStyle: {
+            borderRadius: 8
+        },
+        data: [{
+                value: 40,
+                name: 'rose 1'
+            },
+            {
+                value: 38,
+                name: 'rose 2'
+            },
+            {
+                value: 32,
+                name: 'rose 3'
+            },
+            {
+                value: 30,
+                name: 'rose 4'
+            },
+            {
+                value: 28,
+                name: 'rose 5'
+            },
+            {
+                value: 26,
+                name: 'rose 6'
+            },
+            {
+                value: 22,
+                name: 'rose 7'
+            },
+            {
+                value: 18,
+                name: 'rose 8'
+            }
+        ]
+    }]
+};"

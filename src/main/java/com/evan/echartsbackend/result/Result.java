@@ -1,7 +1,7 @@
 package com.evan.echartsbackend.result;
 
 public class Result {
-    //响应码
+    // response code
     private int code;
 
     public Result(int code) {

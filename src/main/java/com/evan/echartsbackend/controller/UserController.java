@@ -42,7 +42,6 @@ public class UserController {
         }
 
         // Write Csv
-//        String filePath = "src/charts.csv";
         File f = new File(filePath);
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(f,true));
@@ -61,18 +60,16 @@ public class UserController {
     @ResponseBody
     public List updateChart() {
         getUsername();
-//        System.out.println("filePath in updateChart: " + filePath);
-//        String filePath = "src/charts.csv";
         // New list to return stored charts
         List list = new ArrayList();
         // Read Csv
         try {
             CsvReader csvReader = new CsvReader(filePath);
 
-            // 读表头
+            // read excel header
             csvReader.readHeaders();
 
-            // 读内容
+            // read excel content
             while (csvReader.readRecord()) {
                 Chart aChart = new Chart();
                 aChart.setCover(csvReader.get("cover"));
@@ -92,43 +89,11 @@ public class UserController {
     @PostMapping(value = "api/deleteChart")
     @ResponseBody
     public List deleteChart(@RequestBody Chart chart) throws IOException {
-//        String filePath = "src/charts.csv";
-//        String fileTmpPath = "src/chartsTmp.csv";
-
         // Delete Chart and write to chartsTmp.csv
-        try {
-            CsvReader csvReader = new CsvReader(filePath);
-            csvReader.readHeaders();
-            File f = new File(fileTmpPath);
-            BufferedWriter writer = new BufferedWriter(new FileWriter(f,false));
-            CsvWriter cwriter = new CsvWriter(writer,',');
-            cwriter.writeRecord(new String[]{"cover", "title", "type", "data"},false);
-            while (csvReader.readRecord()) {
-                if (chart.getCover().equals(csvReader.get("cover"))) {
-                    continue;
-                }
-                cwriter.writeRecord(new String[]{csvReader.get("cover"), csvReader.get("title"), csvReader.get("type"), csvReader.get("data")},false);
-            }
-            cwriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        writeToFile(filePath, fileTmpPath, chart);
 
         // Copy chartsTmp.csv to charts.csv
-        try {
-            CsvReader csvReader = new CsvReader(fileTmpPath);
-            csvReader.readHeaders();
-            File f = new File(filePath);
-            BufferedWriter writer = new BufferedWriter(new FileWriter(f,false));
-            CsvWriter cwriter = new CsvWriter(writer,',');
-            cwriter.writeRecord(new String[]{"cover", "title", "type", "data"},false);
-            while (csvReader.readRecord()) {
-                cwriter.writeRecord(new String[]{csvReader.get("cover"), csvReader.get("title"), csvReader.get("type"), csvReader.get("data")},false);
-            }
-            cwriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        writeToFile(fileTmpPath, filePath, chart);
 
         return updateChart();
     }
@@ -142,31 +107,31 @@ public class UserController {
     public Map<String, Object> fileupload(MultipartFile file, HttpServletRequest req){
 
         Map<String,Object> result = new HashMap<>();
-        //获取文件的名字
+        // get file name
         String originName = file.getOriginalFilename();
-        //判断文件类型
+        // get file type
         if(!originName.endsWith(".png")) {
             result.put("status","error");
             result.put("msg", "文件类型不对");
             return result;
         }
-        //给上传的文件新建目录
+        // new directory for upload data
         String format = sdf.format(new Date());
         String realPath = fileSavePath + format;
-        //若目录不存在则创建目录
+        // create new directory if not exist
         File folder = new File(realPath);
         if(! folder.exists()) {
             folder.mkdirs();
         }
-        //给上传文件取新的名字，避免重名
+        // avoid same file name
         String newName = UUID.randomUUID().toString() + ".png";
         try {
-            //生成文件，folder为文件目录，newName为文件名
+            // generate file, folder is file menu, newName is filename
             file.transferTo(new File(folder,newName));
-            //生成返回给前端的url
+            // return url to front end
             String url = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() +"/images"+ format + newName;
             imgUrl = url;
-            //返回URL
+            // return url
             result.put("status", "success");
             result.put("url", url);
         }catch (IOException e) {
@@ -181,12 +146,29 @@ public class UserController {
     @PostMapping(value = "api/getUsername")
     @ResponseBody
     public String getUsername() {
-//        System.out.println(UserCache.getUsername());
         filePath = "src/data/"+ UserCache.getUsername() + "charts.csv";
         fileTmpPath = "src/data/" + UserCache.getUsername() + "chartsTmp.csv";
-//        System.out.println("filePath: " + filePath);
-//        System.out.println("fileTmpPath: " + fileTmpPath);
         return UserCache.getUsername();
+    }
+
+    public void writeToFile(String fromFile, String toFile, Chart chart) {
+        try {
+            CsvReader csvReader = new CsvReader(fromFile);
+            csvReader.readHeaders();
+            File f = new File(toFile);
+            BufferedWriter writer = new BufferedWriter(new FileWriter(f,false));
+            CsvWriter cwriter = new CsvWriter(writer,',');
+            cwriter.writeRecord(new String[]{"cover", "title", "type", "data"},false);
+            while (csvReader.readRecord()) {
+                if (chart.getCover().equals(csvReader.get("cover"))) {
+                    continue;
+                }
+                cwriter.writeRecord(new String[]{csvReader.get("cover"), csvReader.get("title"), csvReader.get("type"), csvReader.get("data")},false);
+            }
+            cwriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

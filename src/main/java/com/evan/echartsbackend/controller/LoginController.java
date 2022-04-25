@@ -17,7 +17,7 @@ public class LoginController {
     @PostMapping(value = "api/login")
     @ResponseBody
     public Result login(@RequestBody User requestUser) {
-        // 对 html 标签进行转义，防止 XSS 攻击
+        // prevent XSS attack
         String username = requestUser.getUsername();
         username = HtmlUtils.htmlEscape(username);
 

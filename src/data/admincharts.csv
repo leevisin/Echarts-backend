@@ -181,3 +181,42 @@ http://localhost:8443/images/2022.04.24/8e6a90b2-ec00-4d48-8c37-3ba487aa7055.png
         ]
     }]
 };"
+http://localhost:8443/images/2022.05.03/8b46ef63-594d-49e4-910f-766e3657f104.png,Line Chart,,"option = {
+    grid: {
+        show: true,
+        backgroundColor: ""rgba(201, 129, 129, 1)"",
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: ""none""
+            },
+            saveAsImage: {
+                show: true
+            },
+        }
+    },
+    title: {
+        subtext: 'week-sale',
+        text: 'Line',
+        textStyle: {
+            color: ""rgba(186, 78, 78, 1)"",
+            fontSize: 30,
+        },
+    },
+    tooltip: {},
+    xAxis: {
+        name: 'Week',
+        type: 'category',
+        data: ['Life', 'Health', 'Center', 'Operations ', 'No. 88', 'System', 'Database', 'Security', 'Network']
+    },
+    yAxis: {
+        name: 'Sale',
+        type: 'value'
+    },
+    series: [{
+        data: ['5', '7', '18', '12', '21', '25', '3', '34', '22'],
+        type: 'line'
+    }]
+};"

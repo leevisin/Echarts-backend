@@ -258,3 +258,91 @@ http://localhost:8443/images/2022.05.07/8b6dba82-5a7b-4508-932a-77f85b977d03.png
         type: 'bar'
     }]
 };"
+http://localhost:8443/images/2022.05.08/ee77e0f4-049e-4751-9bf0-7b80de1fe751.png,Bar Test Name,,"option = {
+    grid: {
+        show: true,
+        backgroundColor: ""rgba(238, 241, 64, 1)"",
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: ""none""
+            },
+            saveAsImage: {
+                show: true
+            },
+        }
+    },
+    title: {
+        subtext: 'test',
+        text: 'Bar Test!',
+        textStyle: {
+            color: ""rgba(221, 140, 140, 1)"",
+            fontSize: 30,
+        },
+    },
+    xAxis: {
+        name: 'Week',
+        type: 'category',
+        data: ['Life', 'Health', 'Center', 'Operations ', 'No. 88', 'System', 'Database', 'Security', 'Network']
+    },
+    yAxis: {
+        name: 'Sales',
+        type: 'value'
+    },
+    series: [{
+        data: ['5', '7', '18', '12', '21', '25', '3', '34', '22'],
+        type: 'bar'
+    }]
+};"
+http://localhost:8443/images/2022.05.08/968763e9-d568-40d4-a58c-d179ce894eb6.png,MultiBar,,"option = {
+    grid: {
+        show: false,
+        backgroundColor: ""rgba(255, 255, 255, 1)"",
+    },
+    toolbox: {
+        show: true,
+        backgroundColor: ""rgba(255, 255, 255, 1)"",
+        feature: {
+            dataZoom: {
+                yAxisIndex: ""none""
+            },
+            saveAsImage: {
+                show: true
+            },
+        }
+    },
+    title: {
+        subtext: 'test',
+        text: 'MultiBar',
+        textStyle: {
+            color: ""rgba(211, 90, 90, 1)"",
+            fontSize: 30,
+        },
+    },
+    legend: {},
+    tooltip: {},
+    dataset: {
+        source: [
+            ['name', 'value1', 'value2', 'value3'],
+            ['Life', '5', '12', '3'],
+            ['Health', '7', '21', '34'],
+            ['Center', '18', '25', '22']
+        ]
+    },
+    xAxis: {
+        name: 'Week',
+        type: 'category'
+    },
+    yAxis: {
+        name: 'Sales',
+    },
+    series: [{
+        type: 'bar'
+    }, {
+        type: 'bar'
+    }, {
+        type: 'bar'
+    }]
+};"

@@ -346,3 +346,40 @@ http://localhost:8443/images/2022.05.08/968763e9-d568-40d4-a58c-d179ce894eb6.png
         type: 'bar'
     }]
 };"
+http://localhost:8443/images/2022.05.09/e2b11895-9dad-4865-a097-82a0b82537e8.png,Bar  of Sales,,"option = {
+    title: {
+        text: 'Bar Chart',
+        textStyle: {
+            color: ""rgba(67, 91, 225, 1)"",
+            fontSize: 40,
+        },
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: ""none""
+            },
+            saveAsImage: {
+                show: true
+            },
+        }
+    },
+    grid: {
+        show: true,
+        backgroundColor: ""rgba(210, 244, 235, 1)"",
+    },
+    xAxis: {
+        name: 'Week',
+        type: 'category',
+        data: ['Life', 'Health', 'Center', 'Operations ', 'No. 88', 'System', 'Database', 'Security', 'Network']
+    },
+    yAxis: {
+        name: 'Number',
+        type: 'value'
+    },
+    series: [{
+        data: ['5', '7', '18', '12', '21', '25', '3', '34', '22'],
+        type: 'bar'
+    }]
+};"

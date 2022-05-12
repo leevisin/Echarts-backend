@@ -31,7 +31,7 @@ public class LoginController {
             UserCache.setUsername(username);
             return new Result(200);
         } else {
-            String message = "账号密码错误";
+            String message = "Username or Password is incorrect";
             UserCache.setUsername("");
             return new Result(400);
         }
